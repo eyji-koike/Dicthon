@@ -3,14 +3,14 @@ class Dictionary_API_Entry:
     Instantiate a Dictionary API entry. https://dictionaryapi.dev/
     This instance will query the entry on the API and enables you
     to access the following:
-        ✔︎ List of Audio Pronunciation Links\n
-        ✔︎ List of Antonyms\n
-        ✔︎ List of Synonyms\n
-        ✔︎ List of Word Classes\n
-        ✔︎ List of Definitions\n
-        ✔︎ List of Definitions with Example\n
-        ✔︎ List of Phonetic Text Representations\n
-        ✔︎ Raw JSON entry\n
+    ✔︎ List of Audio Pronunciation Links\n
+    ✔︎ List of Antonyms\n
+    ✔︎ List of Synonyms\n
+    ✔︎ List of Word Classes\n
+    ✔︎ List of Definitions\n
+    ✔︎ List of Definitions with Example\n
+    ✔︎ List of Phonetic Text Representations\n
+    ✔︎ Raw JSON entry\n
     :param word: The word to search.
     :type word: str.
     """
