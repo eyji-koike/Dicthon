@@ -16,6 +16,8 @@ class Dictionary_API_Entry:
     """
 
     def __init__(self, word: str):
+        self.raw_entry = []
+        self.word = word
         self.audio_links = []
         self.antonyms = []
         self.synonyms = []
@@ -25,8 +27,19 @@ class Dictionary_API_Entry:
         self.parts_of_speech = []
         self.meanings_list = []
         self.definitions_with_example = []
-        self.word = word
-        self.raw_entry = self.get_dict_entry()
+        self.__set_up__()
+
+    def __set_up__(self):
+        self.get_dict_entry()
+        self.get_all_meanings()
+        self.get_all_parts_of_speech()
+        self.get_all_phonetics()
+        self.get_all_phonetic_text_representation()
+        self.get_all_synonyms()
+        self.get_all_antonyms()
+        self.get_all_definitions()
+        self.get_all_definitions_with_example()
+        self.get_all_audio_links()
 
     def get_dict_entry(self):
         """
@@ -78,7 +91,7 @@ class Dictionary_API_Entry:
             for part_of_speech in parts_of_speech[:]:
                 if ('definitions' in part_of_speech.keys()) and type(part_of_speech['definitions']) == list:
                     for definition in part_of_speech['definitions']:
-                        if 'definition' in definition.keys() and definition['definition'] != []:
+                        if 'definition' in definition.keys() and definition['definition'] != [] and definition['definition'] not in self.definitions:
                             self.definitions.append(definition['definition'])
         return self.definitions
 
@@ -89,12 +102,16 @@ class Dictionary_API_Entry:
         :return: list definition and example.
         :rtype: list
         """
+
+        examples = []
         for parts_of_speech in self.meanings_list[:]:
             for part_of_speech in parts_of_speech[:]:
                 if ('definitions' in part_of_speech.keys()) and type(part_of_speech['definitions']) == list:
                     for definition in part_of_speech['definitions']:
-                        if 'example' in definition.keys() and definition['example'] != []:
-                            self.definitions_with_example.append({'definition': definition['definition'], 'example': definition['example']})
+                        if ('example' in definition.keys()) and (definition['example'] != []) and (definition['example'] not in examples):
+                            examples.append(definition['example'])
+                            self.definitions_with_example.append(
+                                {'definition': definition['definition'], 'example': definition['example']})
         return self.definitions_with_example
 
     def get_all_phonetics(self):
@@ -107,6 +124,7 @@ class Dictionary_API_Entry:
         for phonetics in self.raw_entry[:]:
             if 'phonetics' in phonetics.keys():
                 self.phonetics.append(phonetics['phonetics'])
+
         return self.phonetics
 
     def get_all_phonetic_text_representation(self):
@@ -134,9 +152,9 @@ class Dictionary_API_Entry:
                 if ('definitions' in part_of_speech.keys()) and type(part_of_speech['definitions']) == list:
                     for definition in part_of_speech['definitions']:
                         if 'synonyms' in definition.keys() and definition['synonyms'] != []:
-                            self.antonyms.append(definition['synonyms'])
-                if ('antonyms' in part_of_speech.keys()) and part_of_speech['synonyms'] != []:
-                    self.antonyms.append(part_of_speech['synonyms'])
+                            self.synonyms.append(definition['synonyms'])
+                if ('antonyms' in part_of_speech.keys()) and part_of_speech['synonyms'] != [] and part_of_speech['synonyms'] not in self.synonyms:
+                    self.synonyms.append(part_of_speech['synonyms'])
         return self.synonyms
 
     def get_all_antonyms(self):
@@ -152,7 +170,7 @@ class Dictionary_API_Entry:
                     for definition in part_of_speech['definitions']:
                         if 'antonyms' in definition.keys() and definition['antonyms'] != []:
                             self.antonyms.append(definition['antonyms'])
-                if ('antonyms' in part_of_speech.keys()) and part_of_speech['antonyms'] != []:
+                if ('antonyms' in part_of_speech.keys()) and part_of_speech['antonyms'] != [] and part_of_speech['antonyms'] not in self.antonyms:
                     self.antonyms.append(part_of_speech['antonyms'])
         return self.antonyms
 
