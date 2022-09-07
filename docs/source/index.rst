@@ -17,7 +17,7 @@ Welcome to Dicthon's documentation!
    :maxdepth: 2
    :caption: Python API:
 
-   source/api/Dictionary_API_Entry.rst
+   api/Dictionary_API_Entry.rst
 
 
 Indices and tables
