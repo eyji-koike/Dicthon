@@ -16,7 +16,7 @@ with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
 setup(
     name="Dicthon",
 
-    version="0.1.4b4",
+    version="0.1.4b5",
 
     description="A dictonary library",
     long_description=long_description,
