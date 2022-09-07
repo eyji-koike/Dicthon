@@ -8,12 +8,12 @@
 # -- Path setup ----------------------------------------
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../'))
+sys.path.insert(0, os.path.abspath('../'))
 
 project = 'Dicthon'
 copyright = '2022, Eyji Koike Cuff'
 author = 'Eyji Koike Cuff'
-release = '0.1.4b0'
+release = '0.1.4b4'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
