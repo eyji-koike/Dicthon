@@ -9,8 +9,9 @@ Welcome to Dicthon's documentation!
     :target: https://dicthon.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
-.. image:: https://github.com/eyji-koike/Dicthon/actions/workflows/python-package.yml/badge.svg?branch=master
-    :target: https://github.com/eyji-koike/Dicthon/actions/workflows/python-package.yml
+.. image:: https://github.com/eyji-koike/Dicthon/actions/workflows/test_pyhton_library.yml/badge.svg
+    :target: https://github.com/eyji-koike/Dicthon/actions/workflows/test_pyhton_library.yml
+    :alt: Testing Status
 
 .. toctree::
    :maxdepth: 2
