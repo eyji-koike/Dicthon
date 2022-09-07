@@ -1,5 +1,5 @@
 # Dicthon  
-
+[![Python package](https://github.com/eyji-koike/Dicthon/actions/workflows/python-package.yml/badge.svg)](https://github.com/eyji-koike/Dicthon/actions/workflows/python-package.yml)
 This library is meant to be a convenient wrapper around the [Dictonary API](https://dictionaryapi.dev/)   
 
 
