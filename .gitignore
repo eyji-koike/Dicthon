@@ -198,3 +198,5 @@ cython_debug/
 .idea/
 /docs/source/_static/
 /docs/source/_templates/
+/docs/_static/
+/docs/_templates/
