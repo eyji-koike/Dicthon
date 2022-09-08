@@ -1,6 +1,9 @@
 # Dicthon  
 
-[![Test Library](https://github.com/eyji-koike/Dicthon/actions/workflows/test_pyhton_library.yml/badge.svg)](https://github.com/eyji-koike/Dicthon/actions/workflows/test_pyhton_library.yml)[![Documentation Status](https://readthedocs.org/projects/dicthon/badge/?version=latest)](https://dicthon.readthedocs.io/en/latest/?badge=latest)  
+[![Test Library](https://github.com/eyji-koike/Dicthon/actions/workflows/test_pyhton_library.yml/badge.svg)](https://github.com/eyji-koike/Dicthon/actions/workflows/test_pyhton_library.yml)
+[![Documentation Status](https://readthedocs.org/projects/dicthon/badge/?version=latest)](https://dicthon.readthedocs.io/en/latest/?badge=latest)  
+[![Test Package and Publish](https://github.com/eyji-koike/Dicthon/actions/workflows/test_and_publish.yml/badge.svg)](https://github.com/eyji-koike/Dicthon/actions/workflows/test_and_publish.yml)  
+
 
 This library is meant to be a convenient wrapper around the [Dictonary API](https://dictionaryapi.dev/)   
 
